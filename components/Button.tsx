@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     text: string;
     link?: string;
 }
@@ -19,7 +19,11 @@ export default function Button({ text, link }: Props) {
     )
 }
 
-function BTN({ text }: { text: string }) {
+interface miniProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    text: string
+}
+
+function BTN({ text }: miniProps) {
     return (
 
         <button className=" bg-white text-black px-4 py-1.5 rounded-full mt-4">

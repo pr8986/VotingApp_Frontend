@@ -3,7 +3,7 @@ import Main from '@/components/Main'
 
 export default function page() {
     return (
-        <Main>
+        <Main vortex={false}>
             <div>Sign up page</div>
         </Main>
     )
