@@ -1,3 +1,4 @@
+"use client"
 import Main from '@/components/Main'
 import React from 'react'
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -12,10 +13,12 @@ import {
 } from "@tabler/icons-react";
 import Heading from '@/components/Heading';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 
 export default function page() {
     return (
         <Main vortex={false}>
+            <Navbar />
             <Heading text='Admin Panel' />
             <BentoGrid className="max-w-4xl mx-auto mb-10">
                 {items.map((item, i) => (

@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { Card, CardDescription, CardTitle } from '@/components/blocks/cards-demo-3';
 import Button from '@/components/Button';
+import Navbar from '@/components/Navbar';
 
 export default function AllCandidate() {
     const [candidates, setCandidates] = useState<CandidateInfo[] | null>(null);
@@ -87,6 +88,7 @@ export default function AllCandidate() {
     if (!candidates) {
         return (
             <Main vortex={false}>
+                <Navbar />
                 <section className='w-full h-full'>
                     <h1 className='text-5xl w-max mx-auto mb-12'>All Candidates</h1>
                     <div>Loading candidates...</div>
@@ -97,6 +99,7 @@ export default function AllCandidate() {
 
     return (
         <Main vortex={false}>
+            <Navbar />
             <section className='w-full h-full'>
                 <h1 className='text-5xl w-max mx-auto mb-12'>All Candidates</h1>
                 {candidates.length > 0 ? (
@@ -104,6 +107,7 @@ export default function AllCandidate() {
                         <Card className='mb-4' key={item._id}>
                             <CardTitle className='space-x-2 text-ellipsis'>
                                 <span className='text-2xl'>{item.name}</span>
+                                <span>--</span>
                                 <span className='text-xl'>{item.party}</span>
                             </CardTitle>
                             <p>Votes : {item.votes.length}</p>

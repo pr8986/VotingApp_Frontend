@@ -46,7 +46,7 @@ export default function Login() {
 
     return (
         <Main vortex >
-            <FormContainer>
+            <FormContainer text='Log In'>
                 <BackgroundGradient className="rounded-[22px] w-96 p-4 sm:p-10 bg-white dark:bg-zinc-900">
                     <form onSubmit={(e) => onSubmit(e)} className="w-full mx-auto">
                         <div className="mb-5">

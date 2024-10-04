@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { Profile } from '@/types';
+import Main from '@/components/Main';
+import Heading from '@/components/Heading';
+import { Card } from '@/components/blocks/cards-demo-3';
+import Button from '@/components/Button';
+import Navbar from '@/components/Navbar';
 
 export default function ProfilePage() {
     const token = localStorage.getItem('authToken');
@@ -43,16 +48,34 @@ export default function ProfilePage() {
         getProfile();
     }, [token, router])
 
+
     return (
-        <div>
-            {token}
+        <Main vortex={false}>
+            <Navbar />
+            <Heading text='My Profile' />
             {
                 profile
                     ?
-                    profile.name
+                    <Card className=' mx-auto space-y-2'>
+                        <h1 className='text-4xl w-max mx-auto underline mb-4'>{profile.name}</h1>
+                        <h2>Email : {profile.email}</h2>
+                        <h2>Mobile : {profile.mobile}</h2>
+                        <h2>Age : {profile.age}</h2>
+                        <h2>Aadhar Number : {profile.adharCardNumber}</h2>
+                        <h2>Address : {profile.address}</h2>
+                        <h2>Role : {profile.role}</h2>
+                        <div className="flex w-full justify-between">
+                            {profile.role == "admin" ?
+                                <Button text='Admin Panel' link='/admin' />
+                                :
+                                <Button text='Vote' link='/candidate/all' />
+                            }
+                            <Button text='Change Password' className=' mx-auto' />
+                        </div>
+                    </Card>
                     :
                     "Nooo"
             }
-        </div>
+        </Main>
     )
 }

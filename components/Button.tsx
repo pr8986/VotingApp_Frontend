@@ -26,7 +26,7 @@ interface miniProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 function BTN({ text }: miniProps) {
     return (
 
-        <button className=" bg-white text-black px-4 py-1.5 rounded-full mt-4">
+        <button className=" bg-white text-black px-4 py-1.5  rounded-full mt-4">
             {text}
         </button>
 

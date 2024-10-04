@@ -7,6 +7,7 @@ import { CandidateInfo } from '@/types';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { Card, CardTitle, CardDescription } from '@/components/blocks/cards-demo-3';
+import Navbar from '@/components/Navbar';
 export default function Delete() {
     const [candidates, setCandidates] = useState<CandidateInfo[] | null>(null);
     const router = useRouter();
@@ -61,6 +62,7 @@ export default function Delete() {
     if (!candidates) {
         return (
             <Main vortex={false}>
+                <Navbar />
                 <section className='w-full h-full'>
                     <h1 className='text-5xl w-max mx-auto mb-12'>All Candidates</h1>
                     <div>Loading candidates...</div>
@@ -71,6 +73,7 @@ export default function Delete() {
 
     return (
         <Main vortex={false}>
+            <Navbar />
             <section className='w-full h-full'>
                 <h1 className='text-5xl w-max mx-auto mb-12'>All Candidates</h1>
                 {candidates.length > 0 ? (

@@ -68,7 +68,7 @@ export default function Update({ params: { id } }: Params) {
 
     return (
         <Main vortex={false}>
-            <FormContainer>
+            <FormContainer text="Upadte Candidate">
                 <BackgroundGradient className="rounded-[22px] w-96 p-4 sm:p-10 bg-white dark:bg-zinc-900">
                     <form onSubmit={(e) => onSubmit(e)} className="w-full mx-auto">
                         <div className="mb-5">

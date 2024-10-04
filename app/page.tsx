@@ -10,10 +10,11 @@ export default function Home() {
           Voting App
         </h2>
         <div className=" space-x-4">
-          <Button text="Get Started" link="/login" />
+          <Button text="Login" link="/login" />
+          <Button text="Sign up" link="/newAddition/user" />
         </div>
-        <Link href={'/admin'} className=" absolute bottom-0">
-          Go to Admin Panel ?
+        <Link href={'/newAddition/admin'} className=" absolute bottom-0">
+          Add an Admin ?
         </Link>
       </div>
 

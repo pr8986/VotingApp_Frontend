@@ -7,6 +7,7 @@ import FormInput from '@/components/FormInput'
 import FormLabel from '@/components/FormLabel'
 import toast from 'react-hot-toast'
 import SubmitBtn from '@/components/SubmitBtn'
+import Navbar from '@/components/Navbar'
 
 
 export default function NewCandidate() {
@@ -44,7 +45,8 @@ export default function NewCandidate() {
 
     return (
         <Main vortex={false}>
-            <FormContainer>
+            <Navbar />
+            <FormContainer text='Add a New Candidate'>
                 <BackgroundGradient className="rounded-[22px] w-96 p-4 sm:p-10 bg-white dark:bg-zinc-900">
                     <form onSubmit={(e) => onSubmit(e)} className="w-full mx-auto">
                         <div className="mb-5">

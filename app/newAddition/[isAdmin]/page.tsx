@@ -62,7 +62,7 @@ export default function Page({ params: { isAdmin } }: Params) {
 
     return (
         <Main vortex >
-            <FormContainer>
+            <FormContainer text={isAdmin === "admin" ? "Add Admin" : "Add new User"} >
                 <BackgroundGradient className="rounded-[22px] w-[500px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
                     <form onSubmit={onSumbit} className="w-full mx-auto">
                         <div className="mb-5 flex gap-2 w-full">
