@@ -11,3 +11,9 @@ export interface Profile {
     role: string
     isVoted: boolean
 }
+
+export interface CandidateInfo {
+    _id: string;
+    name: string;
+    party: string;
+}
