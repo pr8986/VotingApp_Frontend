@@ -70,7 +70,7 @@ export default function ProfilePage() {
                                 :
                                 <Button text='Vote' link='/candidate/all' />
                             }
-                            <Button text='Change Password' className=' mx-auto' />
+                            <Button text='Change Password' link='/changePassword' className=' mx-auto' />
                         </div>
                     </Card>
                     :

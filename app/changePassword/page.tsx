@@ -8,17 +8,27 @@ import FormContainer from '@/components/FormContainer'
 import SubmitBtn from '@/components/SubmitBtn'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation';
+import { backend } from '@/lib/baseAPI'
+import Navbar from '@/components/Navbar'
 
 export default function Changepassword() {
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        if (confirmNewPassword !== newPassword) {
+            toast.error("Both the Passwords should match");
+            return;
+        }
+        else if (currentPassword === newPassword) {
+            toast.error("Current password and new password can't be same");
+            return;
+        }
         try {
-            const response = await fetch('http://localhost:3001/user/profile/password', {
+            const response = await fetch(`${backend}/user/profile/password`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,15 +49,15 @@ export default function Changepassword() {
             } else {
                 toast.error(data.error || 'Failed to update password');
             }
-        } catch (err) {
+        } catch {
             toast.error('Something went wrong. Please try again later.');
-            console.error(err);
         }
     };
 
     return (
         <Main vortex >
-            <FormContainer>
+            <Navbar />
+            <FormContainer text='Change Password'>
                 <BackgroundGradient className="rounded-[22px] w-96 p-4 sm:p-10 bg-white dark:bg-zinc-900">
                     <form onSubmit={(e) => handleSubmit(e)} className="w-full mx-auto">
                         <div className="mb-5">
@@ -57,6 +67,10 @@ export default function Changepassword() {
                         <div className="mb-5">
                             <FormLabel htmlFor='newpassword' text='New Password' />
                             <FormInput setValue={setNewPassword} type='password' id="newpassword" />
+                        </div>
+                        <div className="mb-5">
+                            <FormLabel htmlFor='confnewpassword' text='Confirm Password' />
+                            <FormInput setValue={setConfirmNewPassword} type='password' id="confnewpassword" />
                         </div>
                         <SubmitBtn />
                     </form>

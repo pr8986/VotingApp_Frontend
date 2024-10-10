@@ -8,6 +8,7 @@ import FormContainer from '@/components/FormContainer'
 import SubmitBtn from '@/components/SubmitBtn'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation';
+import { backend } from '@/lib/baseAPI'
 
 export default function Login() {
     const router = useRouter();
@@ -17,7 +18,7 @@ export default function Login() {
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:3001/user/login', {
+            const res = await fetch(`${backend}/user/login`, {
                 method: "POST",
                 headers: {
                     'Content-type': "application/json"
