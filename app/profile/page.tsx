@@ -8,6 +8,7 @@ import Heading from '@/components/Heading';
 import { Card } from '@/components/blocks/cards-demo-3';
 import Button from '@/components/Button';
 import Navbar from '@/components/Navbar';
+import { backend } from '@/lib/baseAPI';
 
 export default function ProfilePage() {
     const token = localStorage.getItem('authToken');
@@ -24,7 +25,7 @@ export default function ProfilePage() {
                     router.push('/login');
                 }
 
-                const response = await fetch('http://localhost:3001/user/profile', {
+                const response = await fetch(`${backend}/user/profile`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,

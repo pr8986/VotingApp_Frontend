@@ -7,6 +7,7 @@ import FormLabel from '@/components/FormLabel'
 import SubmitBtn from '@/components/SubmitBtn'
 import FormContainer from '@/components/FormContainer'
 import toast from 'react-hot-toast'
+import { backend } from '@/lib/baseAPI'
 
 
 type Params = {
@@ -28,7 +29,7 @@ export default function Page({ params: { isAdmin } }: Params) {
     const onSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:3001/user/signup', {
+            const res = await fetch(`${backend}/user/signup`, {
                 method: "POST",
                 headers: {
                     'Content-type': "application/json"

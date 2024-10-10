@@ -18,7 +18,7 @@ export default function Main({ children, className, vortex }: Props) {
                 < Vortex
                     backgroundColor="black"
                     rangeY={800}
-                    particleCount={10}
+                    particleCount={600}
                     baseHue={120}
                     className="w-full h-full"
                 >
