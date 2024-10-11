@@ -9,6 +9,7 @@ import SubmitBtn from '@/components/SubmitBtn'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation';
 import { backend } from '@/lib/baseAPI'
+import Link from 'next/link'
 
 export default function Login() {
     const router = useRouter();
@@ -60,8 +61,10 @@ export default function Login() {
                         </div>
                         <SubmitBtn />
                     </form>
-
                 </BackgroundGradient>
+                <div className='mt-2 text-white'>
+                Don't have an account ? <span className=' hover:text-blue-500 hover:underline'><Link href={'/newAddition/new'} >Sign up</Link></span>
+                </div>
             </FormContainer>
         </Main >
     )

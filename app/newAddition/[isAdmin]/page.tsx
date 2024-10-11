@@ -8,6 +8,7 @@ import SubmitBtn from '@/components/SubmitBtn'
 import FormContainer from '@/components/FormContainer'
 import toast from 'react-hot-toast'
 import { backend } from '@/lib/baseAPI'
+import Link from 'next/link'
 
 
 type Params = {
@@ -100,8 +101,10 @@ export default function Page({ params: { isAdmin } }: Params) {
                         </div>
                         <SubmitBtn />
                     </form>
-
                 </BackgroundGradient>
+                <div className='mt-2 text-white'>
+                    Already have an account ? <span className=' hover:text-blue-500 hover:underline'><Link href={'/login'} >Login</Link></span>
+                </div>
             </FormContainer>
         </Main>
     )

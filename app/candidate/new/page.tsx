@@ -8,6 +8,7 @@ import FormLabel from '@/components/FormLabel'
 import toast from 'react-hot-toast'
 import SubmitBtn from '@/components/SubmitBtn'
 import Navbar from '@/components/Navbar'
+import Link from 'next/link'
 
 
 export default function NewCandidate() {
