@@ -63,7 +63,7 @@ export default function Login() {
                     </form>
                 </BackgroundGradient>
                 <div className='mt-2 text-white'>
-                Don't have an account ? <span className=' hover:text-blue-500 hover:underline'><Link href={'/newAddition/new'} >Sign up</Link></span>
+                Don&apos;t have an account ? <span className=' hover:text-blue-500 hover:underline'><Link href={'/newAddition/new'} >Sign up</Link></span>
                 </div>
             </FormContainer>
         </Main >
